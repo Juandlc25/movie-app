@@ -1,0 +1,129 @@
+.custom_bg {
+  background-image: radial-gradient(
+    circle at 20% 50%,
+    rgba(19.61%, 7.84%, 7.84%, 0.98) 0%,
+    rgba(27.45%, 13.73%, 13.73%, 0.88) 100%
+  );
+  width: 100%;
+}
+
+.details-bg {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  will-change: opacity;
+  transition: filter 1s;
+  box-sizing: border-box;
+}
+
+.details-container {
+  // margin: 0 auto;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  // z-index: 0;
+  box-sizing: border-box;
+  @media (max-width: 807px) {
+    flex-direction: column;
+  }
+}
+
+.details-poster {
+  display: block;
+  width: 300px;
+  height: 450px;
+  border-width: 0px;
+  outline: none;
+}
+
+.details-poster-container {
+  width: 300px;
+  height: 450px;
+  @media (max-width: 807px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+h3 {
+  font-weight: 600;
+  line-height: 1.3em;
+  font-size: 1.3em;
+}
+
+.movie-title {
+  margin: 0;
+}
+
+.movie-actions {
+  width: 100%;
+  height: 68px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  list-style-type: none;
+  line-height: 1.4em;
+}
+
+.movie-actions li {
+  font-size: 0.9em;
+  margin-right: 20px;
+  color: #ffffff;
+
+  .play-video {
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-size: 0.7em;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+.movie-actions li.chart {
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 68px;
+
+  .text {
+    font-weight: 700;
+    margin-left: 6px;
+    line-height: 1.5em;
+    white-space: pre-line;
+    font-size: 0.7em;
+  }
+}
+
+.release-date {
+  opacity: 0.6;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+.overview p {
+  line-height: 2em;
+  width: 70%;
+}
+
+.details-info {
+  color: #ffffff;
+  width: 55%;
+  @media (max-width: 807px) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,59 @@
+<section role="main">
+  <div
+    class="details-bg"
+    *ngIf="movie?.poster_path"
+    [style.backgroundImage]="'url(' + movie?.poster_path + ')'"
+  >
+    <div class="custom_bg">
+      <div class="details-container">
+        <div class="details-poster-container">
+          <img
+            src="{{ movie?.poster_path }}"
+            class="details-poster"
+            alt="{{ movie?.Title }}"
+          />
+        </div>
+
+        <div class="details-info">
+          <div>
+            <h2 class="movie-title">
+              {{ movie?.Title }}
+              <span class="release-date">({{ movie!["Released-date"] }})</span>
+            </h2>
+          </div>
+          <div>
+            <ul class="movie-actions">
+              <li>
+                <a class="play-video" (click)="openDialog()">
+                  <mat-icon aria-hidden="false" aria-label="Star"
+                    >play_arrow</mat-icon
+                  >
+                  Play Trailer
+                </a>
+              </li>
+            </ul>
+          </div>
+          <h3>Rating</h3>
+          <div class="overview">
+            <p>
+              {{ movie?.Rating }}
+            </p>
+          </div>
+          <h3>Genre</h3>
+          <div class="overview">
+            <p>
+              {{ movie?.Genre }}
+            </p>
+          </div>
+
+          <h3>Overview</h3>
+          <div class="overview">
+            <p>
+              {{ movie?.Description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

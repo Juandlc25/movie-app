@@ -1,0 +1,48 @@
+<section class="content" role="main">
+  <div class="header-container">
+    <mat-form-field appearance="outline" class="search-box">
+      <mat-label>Search for a movie</mat-label>
+      <input
+        matInput
+        class="form-control"
+        [ngModel]="searchQuery"
+        (ngModelChange)="searchQuery = $event; searchMovie($event)"
+        placeholder="Enter movie name..."
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Sort by</mat-label>
+      <mat-select [(ngModel)]="sortSelected" (selectionChange)="selectSort()">
+        <mat-option *ngFor="let item of sortOptions" [value]="item.value">{{
+          item.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="container">
+    <app-movie
+      *ngFor="let movie of movies"
+      [id]="movie.id"
+      [Title]="movie.Title"
+      [Description]="movie.Description"
+      [Rating]="movie.Rating"
+      [Duration]="movie.Duration"
+      [Genre]="movie.Genre"
+      [poster_path]="movie.poster_path"
+      [releasedDate]="movie['Released-date']"
+      [trailerLink]="movie['Trailer-Link']"
+      (watchedClick)="addToWatchlist(movie.Title)"
+      (removeWatched)="removeFromWatchlist(movie.Title)"
+    ></app-movie>
+
+    <mat-card *ngIf="noResult">
+      <mat-card-content>
+        <mat-card-header>
+          <h2>No movies found...</h2>
+        </mat-card-header>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

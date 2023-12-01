@@ -1,0 +1,21 @@
+<h2>Watchlist</h2>
+
+<div class="container" *ngIf="watchlist.length > 0">
+  <app-movie
+    *ngFor="let movie of movies"
+    [id]="movie.id"
+    [Title]="movie.Title"
+    [Description]="movie.Description"
+    [Rating]="movie.Rating"
+    [Duration]="movie.Duration"
+    [Genre]="movie.Genre"
+    [poster_path]="movie.poster_path"
+    [releasedDate]="movie['Released-date']"
+    [trailerLink]="movie['Trailer-Link']"
+    (removeWatched)="removeFromWatchlist(movie.Title)"
+  ></app-movie>
+</div>
+
+<div class="container" *ngIf="watchlist.length === 0">
+  <span>Please go to the home page and add some movies to the watchlist</span>
+</div>

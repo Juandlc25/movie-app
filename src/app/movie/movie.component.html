@@ -1,0 +1,26 @@
+<div class="card">
+  <img
+    routerLink="/details/{{ id }}"
+    src="{{ poster_path }}"
+    class="movie-poster"
+    alt="{{ Title }}"
+  />
+  <div class="info">
+    <strong class="cursor-pointer" routerLink="/details/{{ id }}">{{
+      Title
+    }}</strong>
+    <div style="color: rgb(139, 136, 136)">
+      {{ Duration }}
+      <span>
+        <strong>{{ Rating }}</strong> /10</span
+      >
+    </div>
+    <span>{{ releasedDate }}</span>
+    <div class="watchlist cursor-pointer" (click)="onClick()">
+      <mat-icon>{{ isInWatchList ? "visibility_off" : "visibility" }}</mat-icon>
+      <span>{{
+        isInWatchList ? "Remove from watchlist" : "Add to watchlist"
+      }}</span>
+    </div>
+  </div>
+</div>
